@@ -1,6 +1,6 @@
 # Fact
 
-### Observable, Event Emitting data objects w/ Object.observe and EventEmitter2 in 2k
+### Observable, Event Emitting data objects w/ Object.observe and EventEmitter2 in 2.4k
 
 
 Includes an updated EventEmitter2 that uses a `WeakMap` to store all event data, preventing instance pollution. Instance data mutation is monitored via`Object.observe`.
