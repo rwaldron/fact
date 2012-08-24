@@ -1,9 +1,9 @@
 # Fact
 
-### Observable data objects w/ Object.observe
+### Observable data objects w/ Object.observe in 2k
 
 
-Uses Updated EventEmitter2 uses `WeakMap` to store all event data, preventing instance pollution. `Object.observe`
+Includes an updated EventEmitter2 that uses a `WeakMap` to store all event data, preventing instance pollution. Instance data mutation is monitored via`Object.observe`.
 
 ## Getting Started
 `Object.observe` is still in spec development and subject to change. Thankfully, Rafael Weinstein (one of the authors) has made a special build of v8 available as well as a built Chromium to try it out:
