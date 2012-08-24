@@ -34,7 +34,8 @@
     function Data( dict ) {
       var descriptor;
 
-      // Initialize descriptor as an empty object
+      // Initialize descriptor as an empty object. Properties will
+      // be filled in and defined during setup key enumeration.
       descriptor = {};
 
       // Do an assignment "merge" of instance dict onto closed over
