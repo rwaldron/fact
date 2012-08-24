@@ -50,6 +50,11 @@ user.on("change", function( event ) {
 
 });
 
+// look ma' no shitty "getFullName()" methods!
+// No more get("fullName") either!
+console.log( user.fullName );
+
+// "Rick Waldron"
 
 user.loggedIn = Date.now();
 
