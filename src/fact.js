@@ -49,18 +49,7 @@
         // are "computed" accessor properties (|get|)
         if ( typeof setup[ key ] === "function" ) {
           descriptor[ key ] = {
-            get: function() {
-              var value = setup[ key ].call(this);
-
-              this.emit( "accessed", {
-                name: key,
-                type: "accessed",
-                value: value,
-                object: this
-              });
-
-              return value;
-            }
+            get: setup[ key ]
           };
         }
         // [[Put]] instance property values onto |this|

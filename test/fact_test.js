@@ -133,39 +133,39 @@
     equal( c.fullName, "Alli The Dog", "computed property is correct" );
   });
 
-  asyncTest("computed property access", 5, function() {
-    var k, c, C;
+  // asyncTest("computed property access", 5, function() {
+  //   var k, c, C;
 
-    C = new Fact({
-      first: null,
-      last: null,
-      fullName: function() {
-        return this.first + " " + this.last;
-      }
-    });
+  //   C = new Fact({
+  //     first: null,
+  //     last: null,
+  //     fullName: function() {
+  //       return this.first + " " + this.last;
+  //     }
+  //   });
 
-    c = new C({
-      first: "Rick",
-      last: "Waldron"
-    });
+  //   c = new C({
+  //     first: "Rick",
+  //     last: "Waldron"
+  //   });
 
-    c.on("accessed", function( event ) {
+  //   c.on("accessed", function( event ) {
 
-      console.log( event );
+  //     console.log( event );
 
-      equal( event.type, "accessed", "observed an updated property" );
-      equal( event.name, "fullName", "property name is correct" );
-      equal( event.value, "Rick Waldron", "property value is correct" );
-      equal( event.object.first, "Rick", "target object is correct" );
+  //     equal( event.type, "accessed", "observed an updated property" );
+  //     equal( event.name, "fullName", "property name is correct" );
+  //     equal( event.value, "Rick Waldron", "property value is correct" );
+  //     equal( event.object.first, "Rick", "target object is correct" );
 
-      start();
-    });
+  //     start();
+  //   });
 
-    // This should trigger an "accessed" event
-    equal( c.fullName, "Rick Waldron", "computed property is correct" );
+  //   // This should trigger an "accessed" event
+  //   equal( c.fullName, "Rick Waldron", "computed property is correct" );
 
-    window.c = c;
-  });
+  //   window.c = c;
+  // });
 
   asyncTest("prototype chain", 4, function() {
     var k, a, b, C;
