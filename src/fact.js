@@ -26,6 +26,30 @@
     }
   };
 
+  function changeHandler( changes ) {
+    changes.forEach(function( change ) {
+      var canEmit = true;
+
+      // Only fire when something has actually
+      // changed at the end of any given "turn"
+      if ( change.oldValue &&
+        change.oldValue === change.object[ change.name ] ) {
+        canEmit = false;
+      }
+
+      if ( canEmit ) {
+        // Emit an event for the specific
+        // change type
+        this.emit( change.type, change );
+
+        // Emit a generic "change" event for
+        // for all change types
+        this.emit( "change", change );
+      }
+    }, this);
+  }
+
+
   // Fact is wrapper that allows us to create
   // a new "Fact" of our own by closing over the
   // |setup| object
@@ -64,20 +88,7 @@
 
       // Observer changes, pipe change record data out
       // to public event handlers
-      Object.observe( this, function( changes ) {
-
-        changes.forEach(function( change ) {
-
-          // Emit an event for the specific
-          // change type
-          this.emit( change.type, change );
-
-          // Emit a generic "change" event for
-          // for all change types
-          this.emit( "change", change );
-
-        }, this);
-      }.bind(this));
+      Object.observe( this, changeHandler.bind(this) );
     }
 
     // Inherit EventEmitter(2)
