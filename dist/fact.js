@@ -594,9 +594,7 @@
 
 (function( exports ) {
 
-  var Abstract, noNotify;
-
-  Abstract = {
+  var Abstract = {
     // [[Put]] props from dictionary onto |this|
     // MUST BE CALLED FROM WITHIN A CONSTRUCTOR:
     //  Abstract.put.call( this, dictionary );
