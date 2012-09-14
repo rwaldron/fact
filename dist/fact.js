@@ -1,8 +1,8 @@
-/*! fact - v0.1.0 - 2012-08-24
+/*! fact - v0.1.0 - 2012-09-14
 * https://github.com/rwldrn/fact
 * Copyright (c) 2012 Rick Waldron; Licensed MIT */
 
-;!function(exports, undefined) {
+(function(exports, undefined) {
 
   var isArray = Array.isArray ? Array.isArray : function _isArray(obj) {
     return Object.prototype.toString.call(obj) === "[object Array]";
@@ -579,7 +579,6 @@
     else {
       return [];
     }
-
   };
 
   if (typeof define === 'function' && define.amd) {
@@ -590,7 +589,7 @@
     exports.EventEmitter2 = EventEmitter;
   }
 
-}(typeof process !== 'undefined' && typeof process.title !== 'undefined' && typeof exports !== 'undefined' ? exports : window);
+}(typeof process !== 'undefined' && typeof process.title !== 'undefined' && typeof exports !== 'undefined' ? exports : window));
 
 (function( exports ) {
 

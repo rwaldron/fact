@@ -36,14 +36,16 @@
     ok( true, "constructing does not throw" );
   });
 
-  test("inheritance", 3, function() {
+  test("inheritance", 4, function() {
     var c, C = new Fact({});
 
     c = new C();
 
     equal( typeof c.on, "function", "inherited an on method" );
+    equal( typeof c.off, "function", "inherited an off method" );
     equal( typeof c.emit, "function", "inherited an emit method" );
-    equal( typeof c._events, "undefined", "did not inherit an _events property");
+
+    equal( typeof c._events, "undefined", "did NOT inherit an _events property");
   });
 
   asyncTest("emitter", 1, function() {
